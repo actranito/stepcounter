@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
       title: 'Stepcounter',
       theme: ThemeData(
         fontFamily: 'Lato',
-        primarySwatch: Colors.blue,
       ),
       home: TestView(),
     );
