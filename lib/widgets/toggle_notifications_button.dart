@@ -14,6 +14,7 @@ class ToggleNotificationsButton extends StatelessWidget {
 
     return IconButton(
       onPressed: () {
+        // Add the ToggleNotificationsEvent to the Settings bloc
         (context).read<SettingsBloc>().add(ToggleNotificationsEvent());
       },
       icon: Icon(

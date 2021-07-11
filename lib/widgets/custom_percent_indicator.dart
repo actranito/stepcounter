@@ -19,9 +19,12 @@ class CustomPercentIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Check if the received percentage is valid (between 0.0 and 1.0)
+    // If it's not a valid percentage, set it to the closest limit
     double finalPercentage = this.percent;
-    if (finalPercentage < 0.0 || finalPercentage > 1.0) {
+    if (finalPercentage < 0.0) {
       finalPercentage = 0.0;
+    } else if (finalPercentage > 1.0) {
+      finalPercentage = 1.0;
     }
 
     switch (this.percentIndicatorType) {
