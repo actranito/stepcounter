@@ -83,7 +83,7 @@ class CustomPercentIndicator extends StatelessWidget {
         LinearPercentIndicator(
           alignment: MainAxisAlignment.center,
           lineHeight: 10.0,
-          percent: 0.5,
+          percent: percentage,
           backgroundColor: AppColors.FADE_GRAY,
           progressColor: AppColors.ORANGE,
         ),
