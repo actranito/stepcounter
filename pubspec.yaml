@@ -17,6 +17,7 @@ dependencies:
   percent_indicator: ^3.0.1
   hydrated_bloc: ^7.0.1
   path_provider: ^2.0.2
+  flutter_local_notifications: ^6.0.0
 
   # localstore is used by the mocked stepcounter source
   localstore: ^1.2.0
