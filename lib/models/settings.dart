@@ -7,7 +7,7 @@ class Settings extends Equatable {
   // Setting the default values
   Settings({
     this.showNotifications = true,
-    this.dailyGoal = 30000,
+    this.dailyGoal = 2000,
   });
 
   Settings copyWith({

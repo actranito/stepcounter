@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:stepcounter/blocs/settings_bloc/settings_bloc.dart';
+import 'package:stepcounter/blocs/stepcounter_bloc/stepcounter_bloc.dart';
 import 'package:stepcounter/views/test_view.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:flutter/foundation.dart';
@@ -30,6 +31,10 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider<SettingsBloc>(
             create: (context) => SettingsBloc(),
+          ),
+          BlocProvider<StepcounterBloc>(
+            create: (context) => StepcounterBloc(),
+            lazy: false,
           ),
         ],
         child: TestView(),

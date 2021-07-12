@@ -23,7 +23,7 @@ class SettingsBloc extends Bloc<SettingsEvent, Settings> with HydratedMixin {
       // Stream the same Settings object with the new dailyGoal value
       yield state.copyWith(dailyGoal: event.dailyGoal);
     } else {
-      print('Unknown event, ignoring it)');
+      print('Unknown event in Settings BLoC, ignoring it)');
     }
   }
 
