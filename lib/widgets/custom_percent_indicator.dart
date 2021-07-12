@@ -49,7 +49,7 @@ class CustomPercentIndicator extends StatelessWidget {
       circularStrokeCap: CircularStrokeCap.round,
       center: Text(
         // Multiply the finalPercetage by 100 to get the % to print
-        '${(percentage * 100).toStringAsFixed(0)}%',
+        '${(percentage * 100).floor()}%',
         style: CustomTextStyles.PERCENTAGE_TEXT,
       ),
       progressColor: AppColors.ORANGE,
