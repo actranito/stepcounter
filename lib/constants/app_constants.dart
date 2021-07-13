@@ -48,4 +48,10 @@ class CustomTextStyles {
     color: AppColors.GRAY,
     fontSize: 14.0,
   );
+
+  static const TextStyle NUMBER_PICKER = TextStyle(
+    fontFamily: 'Lato',
+    color: AppColors.SOFT_BLUE,
+    fontSize: 16.0,
+  );
 }

@@ -21,6 +21,7 @@ dependencies:
 
   # localstore is used by the mocked stepcounter source
   localstore: ^1.2.0
+  numberpicker: ^2.1.1
 
 dev_dependencies:
   flutter_test:

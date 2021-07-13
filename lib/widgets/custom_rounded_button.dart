@@ -5,11 +5,15 @@ class CustomRoundedButton extends StatelessWidget {
   final Widget? icon;
   final String? text;
   final Function onTap;
+  final Color color;
+  final Color? textColor;
   const CustomRoundedButton({
     Key? key,
+    required this.onTap,
     this.icon,
     this.text,
-    required this.onTap,
+    this.color = AppColors.FADE_GRAY,
+    this.textColor,
   }) : super(key: key);
 
   @override
@@ -18,7 +22,7 @@ class CustomRoundedButton extends StatelessWidget {
       height: 35.0,
       padding: EdgeInsets.symmetric(horizontal: 20.0),
       decoration: BoxDecoration(
-        color: AppColors.FADE_GRAY,
+        color: this.color,
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: InkWell(
@@ -38,7 +42,11 @@ class CustomRoundedButton extends StatelessWidget {
             if (this.text != null)
               Text(
                 this.text!,
-                style: CustomTextStyles.BUTTON_TEXT,
+                style: (this.textColor == null)
+                    ? CustomTextStyles.BUTTON_TEXT
+                    : CustomTextStyles.BUTTON_TEXT.copyWith(
+                        color: textColor,
+                      ),
               ),
           ],
         ),
