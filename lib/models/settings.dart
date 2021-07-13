@@ -1,12 +1,12 @@
 import 'package:equatable/equatable.dart';
 
 class Settings extends Equatable {
-  late final bool showNotifications;
+  late final bool notificationsEnabled;
   late final int dailyGoal;
 
   // Setting the default values
   Settings({
-    this.showNotifications = true,
+    this.notificationsEnabled = true,
     this.dailyGoal = 2000,
   });
 
@@ -15,11 +15,11 @@ class Settings extends Equatable {
     int? dailyGoal,
   }) {
     return Settings(
-      showNotifications: showNotifications ?? this.showNotifications,
+      notificationsEnabled: showNotifications ?? this.notificationsEnabled,
       dailyGoal: dailyGoal ?? this.dailyGoal,
     );
   }
 
   @override
-  List<Object> get props => [this.showNotifications, this.dailyGoal];
+  List<Object> get props => [this.notificationsEnabled, this.dailyGoal];
 }

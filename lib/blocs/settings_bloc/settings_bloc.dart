@@ -18,7 +18,7 @@ class SettingsBloc extends Bloc<SettingsEvent, Settings> with HydratedMixin {
   ) async* {
     if (event is ToggleNotificationsEvent) {
       // Stream the same Settings object with a toggled showNotifications value
-      yield state.copyWith(showNotifications: !state.showNotifications);
+      yield state.copyWith(showNotifications: !state.notificationsEnabled);
     } else if (event is SetDailyGoalEvent) {
       // Stream the same Settings object with the new dailyGoal value
       yield state.copyWith(dailyGoal: event.dailyGoal);
@@ -30,7 +30,7 @@ class SettingsBloc extends Bloc<SettingsEvent, Settings> with HydratedMixin {
   @override
   Settings? fromJson(Map<String, dynamic> json) {
     return Settings(
-      showNotifications: json['showNotifications'],
+      notificationsEnabled: json['showNotifications'],
       dailyGoal: json['dailyGoal'],
     );
   }
@@ -38,7 +38,7 @@ class SettingsBloc extends Bloc<SettingsEvent, Settings> with HydratedMixin {
   @override
   Map<String, dynamic>? toJson(Settings state) {
     return {
-      'showNotifications': state.showNotifications,
+      'showNotifications': state.notificationsEnabled,
       'dailyGoal': state.dailyGoal,
     };
   }

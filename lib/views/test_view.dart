@@ -88,7 +88,7 @@ class TestView extends StatelessWidget {
                     onTap: () {
                       (context)
                           .read<SettingsBloc>()
-                          .add(SetDailyGoalEvent(dailyGoal: dailyGoal + 1));
+                          .add(SetDailyGoalEvent(dailyGoal: dailyGoal + 100));
                       print('Daily Goal pressed');
                     },
                   ),

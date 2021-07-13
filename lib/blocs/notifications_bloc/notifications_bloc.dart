@@ -65,7 +65,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
 
       // We will only show the notification when the notifications are enabled
       // and if the dailyStepCount is less than the dailyGoal
-      if (settings.showNotifications && steps < settings.dailyGoal) {
+      if (settings.notificationsEnabled && steps < settings.dailyGoal) {
         this.add(SetNotificationEvent());
       } else {
         this.add(CancelNotificationEvent());
