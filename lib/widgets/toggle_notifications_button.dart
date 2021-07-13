@@ -19,8 +19,8 @@ class ToggleNotificationsButton extends StatelessWidget {
       },
       icon: Icon(
         showNotifications
-            ? Icons.notifications_off_outlined
-            : Icons.notifications_outlined,
+            ? Icons.notifications_outlined
+            : Icons.notifications_off_outlined,
         color: AppColors.DARK_BLUE,
         size: 26.0,
       ),
