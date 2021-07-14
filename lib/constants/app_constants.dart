@@ -54,4 +54,10 @@ class CustomTextStyles {
     color: AppColors.SOFT_BLUE,
     fontSize: 16.0,
   );
+
+  static const TextStyle SNACKBAR = TextStyle(
+    fontFamily: 'Lato',
+    color: Colors.white,
+    fontSize: 15.0,
+  );
 }

@@ -5,17 +5,19 @@ import 'package:path_provider/path_provider.dart';
 import 'package:stepcounter/blocs/notifications_bloc/notifications_bloc.dart';
 import 'package:stepcounter/blocs/settings_bloc/settings_bloc.dart';
 import 'package:stepcounter/blocs/stepcounter_bloc/stepcounter_bloc.dart';
-import 'package:stepcounter/views/test_view.dart';
+import 'package:stepcounter/views/stepcounter_view.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
 
+const NOTIFICATION_ID_8PM = 0;
+
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 
 void main() async {
-  // Setting up the Hydrated Cubit storage
+  // Setting up the Hydrated BLoC storage
   WidgetsFlutterBinding.ensureInitialized();
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
@@ -86,7 +88,7 @@ class _MyAppState extends State<MyApp> {
                           await cancelNotification();
                         }
                       },
-                      child: TestView(),
+                      child: StepcounterView(),
                     );
                   },
                 ));
@@ -96,6 +98,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  // This method is used to set the notification for 8pm
   Future<void> setNotification() async {
     // Get the date for today at 8pm
     DateTime notificationTime = DateTime(
@@ -111,7 +114,7 @@ class _MyAppState extends State<MyApp> {
       notificationTime = notificationTime.add(Duration(days: 1));
     }
     flutterLocalNotificationsPlugin.zonedSchedule(
-      0,
+      NOTIFICATION_ID_8PM,
       'You haven\'t reached your daily goal yet',
       '4 hours left until the end of the day',
       tz.TZDateTime.from(notificationTime, tz.local),
@@ -125,8 +128,9 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  // This method is used to cancel the 8pm notification
   Future<void> cancelNotification() async {
-    flutterLocalNotificationsPlugin.cancel(0);
+    flutterLocalNotificationsPlugin.cancel(NOTIFICATION_ID_8PM);
   }
 }
 

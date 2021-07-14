@@ -22,30 +22,38 @@ class ToggleNotificationsButton extends StatelessWidget {
         if (state.notificationsEnabled) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Notifications enabled'),
+              content: Text(
+                'Notifications enabled',
+                style: CustomTextStyles.SNACKBAR,
+              ),
+              backgroundColor: AppColors.GRAY,
               duration: Duration(seconds: 1),
             ),
           );
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Notifications disabled'),
+              content: Text(
+                'Notifications disabled',
+                style: CustomTextStyles.SNACKBAR,
+              ),
+              backgroundColor: AppColors.GRAY,
               duration: Duration(seconds: 1),
             ),
           );
         }
       },
-      child: IconButton(
-        onPressed: () {
+      child: GestureDetector(
+        onTap: () {
           // Add the ToggleNotificationsEvent to the Settings bloc
           (context).read<SettingsBloc>().add(ToggleNotificationsEvent());
         },
-        icon: Icon(
+        child: Icon(
           showNotifications
               ? Icons.notifications_outlined
               : Icons.notifications_off_outlined,
           color: AppColors.DARK_BLUE,
-          size: 26.0,
+          size: 28.0,
         ),
       ),
     );
