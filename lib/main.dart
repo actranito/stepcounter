@@ -11,8 +11,8 @@ import 'package:flutter/foundation.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
 
+// Used to handle notifications
 const NOTIFICATION_ID_8PM = 0;
-
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 
@@ -35,7 +35,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
+    // Initializing the notification settings
     initializeNotificationSettings();
+
+    // Initializing timezones
     tz.initializeTimeZones();
     super.initState();
   }
@@ -50,7 +53,7 @@ class _MyAppState extends State<MyApp> {
       ),
 
       /// Providing the Settings and Stepcounter BLoCs first so that we can pass
-      ///  it to the Notifications BLoC when we provide it. The NOtifications BLoC will
+      /// it to the Notifications BLoC when we provide it. The Notifications BLoC will
       /// then listen to state changes that happen in both Settings and
       /// Stepcounter BLoCs.
       home: MultiBlocProvider(

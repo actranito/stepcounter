@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+/// This model will hold all the settings available
 class Settings extends Equatable {
   late final bool notificationsEnabled;
   late final int dailyGoal;

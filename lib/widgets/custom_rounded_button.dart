@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stepcounter/constants/app_constants.dart';
 
+/// This widget displays a rounded button.
+/// It is required to pass the onTap callback function.
 class CustomRoundedButton extends StatelessWidget {
   final Widget? icon;
   final String? text;

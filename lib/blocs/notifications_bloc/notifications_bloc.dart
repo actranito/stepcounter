@@ -15,6 +15,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   late StreamSubscription _settingsSubscription;
   late StreamSubscription _stepcounterSubstricption;
 
+  /// This bloc is used to handle the notifications of the app
   NotificationsBloc(this._settingsBloc, this._stepcounterBloc)
       : super(NotificationsSettingsState(false)) {
     // We will update the notification status at the start of the brick

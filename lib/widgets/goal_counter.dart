@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stepcounter/constants/app_constants.dart';
 
+/// This widget can display an Icon, followed by a main text, followed by a
+/// subText, vertically. All the parameters are optional.
 class GoalCounter extends StatelessWidget {
   final Widget? icon;
   final String? mainText;

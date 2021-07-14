@@ -4,6 +4,10 @@ import 'package:stepcounter/constants/app_constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stepcounter/models/settings.dart';
 
+/// This widget displays a notification button.
+/// This widget is listening for the value of Settings.notificationsEnabled
+/// and will change accordingly.
+/// It is also in charge of displaying a snackbar whenever the state changes.
 class ToggleNotificationsButton extends StatelessWidget {
   const ToggleNotificationsButton({Key? key}) : super(key: key);
 

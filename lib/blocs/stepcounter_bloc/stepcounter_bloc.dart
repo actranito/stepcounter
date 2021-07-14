@@ -8,6 +8,8 @@ import 'package:stepcounter/services/mock_stepCounter.dart';
 part 'stepcounter_event.dart';
 part 'stepcounter_state.dart';
 
+/// This bloc is used to listen to and emit states on the data received
+/// from the step counter device (in this case is mocked).
 class StepcounterBloc extends Bloc<StepcounterEvent, StepcounterState> {
   StepcounterBloc() : super(StepcounterLoading()) {
     MockStepCounter mockStepCounter = MockStepCounter();

@@ -5,6 +5,10 @@ import 'package:stepcounter/constants/app_constants.dart';
 import 'package:stepcounter/constants/enums.dart';
 import 'dart:math' as math;
 
+/// This widget returns a percentIndicator.
+/// It can return a circular and a linear percent indicator depending on the
+/// percentIndicatorType parameter.
+/// The percentage to be shown must also be passed as a parameter.
 class CustomPercentIndicator extends StatelessWidget {
   final PercentIndicatorType
       percentIndicatorType; // This enum is used to define which type of percent indicator to display

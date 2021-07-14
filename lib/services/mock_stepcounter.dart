@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:localstore/localstore.dart';
 import 'package:stepcounter/models/stepcounter_data.dart';
 
+/// This class mocks a stepcounter device.
+/// It streams an object of StepcounterData
 class MockStepCounter {
   final db = Localstore.instance;
   int dailyStepCount = 0;
