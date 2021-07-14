@@ -5,6 +5,8 @@ import 'package:stepcounter/constants/app_constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stepcounter/widgets/custom_rounded_button.dart';
 
+/// This view is used to select the dailyGoalView and it was build to be
+/// shown in a modalBottomSheet.
 class SetDailyGoalView extends StatefulWidget {
   final BuildContext context;
   final int initialValue;
