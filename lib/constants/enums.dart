@@ -1,0 +1,4 @@
+enum PercentIndicatorType {
+  Circular,
+  Linear,
+}
